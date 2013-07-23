@@ -1,0 +1,20 @@
+*.py[co]
+*~
+.emacs-project
+*.orig
+\#*
+
+# If we build a package with setup.py sdist bdist_egg
+# we usually want to exclude the resulting builds from
+# our source control
+build/
+dist/
+*.egg-info/
+
+# PyCharm/IDEA project-related metadata
+.idea/
+
+.vagrant
+
+# ignore docs builds
+docs/_build/*
