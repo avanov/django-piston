@@ -266,7 +266,7 @@ class Mimer(object):
             
             if loadee:
                 try:
-                    self.request.data = loadee(self.request.raw_post_data)
+                    self.request.data = loadee(self.request.body)
                         
                     # Reset both POST and PUT from request, as its
                     # misleading having their presence around.
