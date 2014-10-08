@@ -230,7 +230,7 @@ class Resource(object):
                 stream = srl.render(request)
 
             if not isinstance(stream, HttpResponse):
-                resp = HttpResponse(stream, mimetype=ct, status=status_code)
+                resp = HttpResponse(stream, content_type=ct, status=status_code)
             else:
                 resp = stream
 
