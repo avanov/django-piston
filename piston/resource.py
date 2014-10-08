@@ -230,7 +230,10 @@ class Resource(object):
                 stream = srl.render(request)
 
             if not isinstance(stream, HttpResponse):
-                resp = HttpResponse(stream, content_type=ct, status=status_code)
+                if django.VERSION >= (1, 7):
+                    resp = HttpResponse(stream, content_type=ct, status=status_code)
+                else:
+                    resp = HttpResponse(stream, mimetype=ct, status=status_code)
             else:
                 resp = stream
 
